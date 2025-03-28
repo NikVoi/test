@@ -23,7 +23,7 @@ const Form = observer(() => {
 				<ButtonNav className='border-r-0 rounded-tl-2xl border-b-0'>
 					Exchange Crypto
 				</ButtonNav>
-				<ButtonNav className='rounded-tr-2xl border-b-0 '>
+				<ButtonNav className='rounded-tr-2xl  '>
 					<span className='opacity-50 '>Buy / Sell Crypto 💳</span>
 				</ButtonNav>
 			</div>
