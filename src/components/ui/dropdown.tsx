@@ -27,11 +27,10 @@ export const Dropdown = observer(
 			handleSelection,
 		} = useDropdown(coins, selectedCurrency, onCurrencyChange)
 
-		// Функция для выбора валюты
 		const handleCoinSelection = (coinId: number) => {
-			handleSelection(coinId) // Обновление выбранной валюты
-			onCurrencyChange(coinId) // Обновление валюты в store
-			setIsOpen(false) // Закрытие выпадающего списка
+			handleSelection(coinId)
+			onCurrencyChange(coinId)
+			setIsOpen(false)
 		}
 
 		return (

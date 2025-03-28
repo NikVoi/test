@@ -48,7 +48,9 @@ const CurrencyItem = observer(
 				<Dropdown
 					selectedCurrency={isReceiving ? store.toCoinId : store.fromCoinId}
 					onCurrencyChange={
-						isReceiving ? store.setToCoinId : store.setFromCoinId
+						isReceiving
+							? store.setToCoinId.bind(store)
+							: store.setFromCoinId.bind(store)
 					}
 					coins={store.coins}
 				/>

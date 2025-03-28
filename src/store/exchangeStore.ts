@@ -6,8 +6,8 @@ import { Coin } from '../types/types'
 
 class CryptoStore {
 	coins: Coin[] = []
-	fromCoinId: number = 1 // Значение по умолчанию
-	toCoinId: number = 2 // Значение по умолчанию
+	fromCoinId: number = 1
+	toCoinId: number = 2
 	amount: number = 0.01
 	conversionRate: number = 1
 	loading: boolean = false
@@ -21,10 +21,10 @@ class CryptoStore {
 		this.loading = true
 		try {
 			this.coins = await fetchCoins()
-			// Устанавливаем валюты по умолчанию, если монеты загружены
+
 			if (this.coins.length > 0) {
-				this.fromCoinId = this.coins[0].id // Устанавливаем ID первой монеты
-				this.toCoinId = this.coins[1]?.id || this.coins[0].id // Если вторая монета существует, используем ее, иначе ставим первую
+				this.fromCoinId = this.coins[0].id
+				this.toCoinId = this.coins[1]?.id || this.coins[0].id
 			}
 		} catch (error) {
 			this.error = 'Failed to load coins'
